@@ -197,7 +197,6 @@ export default function Home() {
                   <p className="text-xs uppercase tracking-widest text-zinc-600">
                     Developer
                   </p>
-
                   <p className="mt-1 text-zinc-300">Henrique</p>
                 </div>
 
@@ -205,7 +204,6 @@ export default function Home() {
                   <p className="text-xs uppercase tracking-widest text-zinc-600">
                     Focus
                   </p>
-
                   <p className="mt-1 text-zinc-300">
                     Systems & Automation
                   </p>
@@ -215,7 +213,6 @@ export default function Home() {
                   <p className="text-xs uppercase tracking-widest text-zinc-600">
                     Environment
                   </p>
-
                   <p className="mt-1 text-zinc-300">
                     Building real solutions
                   </p>
@@ -288,25 +285,16 @@ export default function Home() {
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-2">
-                  <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-400">
-                    Python
-                  </span>
-
-                  <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-400">
-                    Selenium
-                  </span>
-
-                  <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-400">
-                    Tkinter
-                  </span>
-
-                  <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-400">
-                    Pandas
-                  </span>
-
-                  <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-400">
-                    OpenPyXL
-                  </span>
+                  {["Python", "Selenium", "Tkinter", "Pandas", "OpenPyXL"].map(
+                    (tech) => (
+                      <span
+                        key={tech}
+                        className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-400"
+                      >
+                        {tech}
+                      </span>
+                    ),
+                  )}
                 </div>
 
                 <div className="mt-10">
@@ -326,7 +314,6 @@ export default function Home() {
                     <p className="font-mono text-xs uppercase tracking-widest text-zinc-600">
                       Problema
                     </p>
-
                     <p className="mt-3 leading-7 text-zinc-400">
                       Processos manuais e repetitivos envolvendo organização,
                       validação e envio de documentos.
@@ -337,7 +324,6 @@ export default function Home() {
                     <p className="font-mono text-xs uppercase tracking-widest text-zinc-600">
                       Solução
                     </p>
-
                     <p className="mt-3 leading-7 text-zinc-400">
                       Desenvolvimento de uma automação desktop capaz de executar
                       o fluxo de documentos com maior padronização e controle.
@@ -348,7 +334,6 @@ export default function Home() {
                     <p className="font-mono text-xs uppercase tracking-widest text-zinc-600">
                       Interface
                     </p>
-
                     <p className="mt-3 leading-7 text-zinc-400">
                       Aplicação com interface gráfica para iniciar, acompanhar e
                       controlar a execução da automação.
@@ -359,7 +344,6 @@ export default function Home() {
                     <p className="font-mono text-xs uppercase tracking-widest text-zinc-600">
                       Objetivo
                     </p>
-
                     <p className="mt-3 leading-7 text-zinc-400">
                       Reduzir trabalho manual, minimizar erros operacionais e
                       tornar o processo mais eficiente.
@@ -402,7 +386,6 @@ export default function Home() {
 
               <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
                 Programação começou como estudo.
-
                 <span className="block text-zinc-500">
                   Automação transformou isso em propósito.
                 </span>
@@ -439,7 +422,6 @@ export default function Home() {
                 <div className="space-y-4 p-5">
                   <div className="flex items-center justify-between gap-6">
                     <span className="text-zinc-600">FOCUS</span>
-
                     <span className="text-right text-zinc-300">
                       Systems & Automation
                     </span>
@@ -447,15 +429,11 @@ export default function Home() {
 
                   <div className="flex items-center justify-between gap-6">
                     <span className="text-zinc-600">LANGUAGE</span>
-
-                    <span className="text-right text-zinc-300">
-                      Python
-                    </span>
+                    <span className="text-right text-zinc-300">Python</span>
                   </div>
 
                   <div className="flex items-center justify-between gap-6">
                     <span className="text-zinc-600">APPROACH</span>
-
                     <span className="text-right text-zinc-300">
                       Learning by Building
                     </span>
@@ -477,10 +455,7 @@ export default function Home() {
             <div>
               <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-4 font-mono text-xs">
                 <span className="text-zinc-500">journey.log</span>
-
-                <span className="text-zinc-600">
-                  2023 — PRESENT
-                </span>
+                <span className="text-zinc-600">2023 — PRESENT</span>
               </div>
 
               <div className="border-l border-white/10 pl-8">
@@ -488,9 +463,7 @@ export default function Home() {
                 <div className="relative pb-12">
                   <span className="absolute -left-[37px] top-1 h-3 w-3 rounded-full border border-blue-400 bg-[#050505]" />
 
-                  <p className="font-mono text-sm text-blue-400">
-                    2023
-                  </p>
+                  <p className="font-mono text-sm text-blue-400">2023</p>
 
                   <h3 className="mt-2 text-xl font-semibold">
                     Primeiros passos em desenvolvimento
@@ -503,17 +476,14 @@ export default function Home() {
                   </p>
 
                   <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500">
-                      Backend
-                    </span>
-
-                    <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500">
-                      Database
-                    </span>
-
-                    <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500">
-                      Python
-                    </span>
+                    {["Backend", "Database", "Python"].map((item) => (
+                      <span
+                        key={item}
+                        className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500"
+                      >
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
@@ -521,9 +491,7 @@ export default function Home() {
                 <div className="relative pb-12">
                   <span className="absolute -left-[37px] top-1 h-3 w-3 rounded-full border border-zinc-600 bg-[#050505]" />
 
-                  <p className="font-mono text-sm text-zinc-500">
-                    2024
-                  </p>
+                  <p className="font-mono text-sm text-zinc-500">2024</p>
 
                   <h3 className="mt-2 text-xl font-semibold">
                     Explorando diferentes caminhos
@@ -536,13 +504,14 @@ export default function Home() {
                   </p>
 
                   <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500">
-                      Godot
-                    </span>
-
-                    <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500">
-                      Game Development
-                    </span>
+                    {["Godot", "Game Development"].map((item) => (
+                      <span
+                        key={item}
+                        className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500"
+                      >
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
@@ -550,9 +519,7 @@ export default function Home() {
                 <div className="relative pb-12">
                   <span className="absolute -left-[37px] top-1 h-3 w-3 rounded-full border border-blue-400 bg-[#050505]" />
 
-                  <p className="font-mono text-sm text-blue-400">
-                    2024
-                  </p>
+                  <p className="font-mono text-sm text-blue-400">2024</p>
 
                   <h3 className="mt-2 text-xl font-semibold">
                     Descoberta da automação
@@ -566,17 +533,14 @@ export default function Home() {
                   </p>
 
                   <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500">
-                      Python
-                    </span>
-
-                    <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500">
-                      PyAutoGUI
-                    </span>
-
-                    <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500">
-                      Automation
-                    </span>
+                    {["Python", "PyAutoGUI", "Automation"].map((item) => (
+                      <span
+                        key={item}
+                        className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500"
+                      >
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
@@ -584,9 +548,7 @@ export default function Home() {
                 <div className="relative pb-12">
                   <span className="absolute -left-[37px] top-1 h-3 w-3 rounded-full border border-blue-400 bg-[#050505]" />
 
-                  <p className="font-mono text-sm text-blue-400">
-                    2025
-                  </p>
+                  <p className="font-mono text-sm text-blue-400">2025</p>
 
                   <h3 className="mt-2 text-xl font-semibold">
                     Evolução técnica
@@ -600,17 +562,14 @@ export default function Home() {
                   </p>
 
                   <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500">
-                      Selenium
-                    </span>
-
-                    <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500">
-                      Pandas
-                    </span>
-
-                    <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500">
-                      Web Automation
-                    </span>
+                    {["Selenium", "Pandas", "Web Automation"].map((item) => (
+                      <span
+                        key={item}
+                        className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-500"
+                      >
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
@@ -647,6 +606,300 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          04 / TECNOLOGIAS
+      ========================================================= */}
+      <section
+        id="tecnologias"
+        className="border-t border-white/10 px-6 py-28"
+      >
+        <div className="mx-auto w-full max-w-6xl">
+          {/* CABEÇALHO */}
+          <div className="mb-16">
+            <p className="font-mono text-sm uppercase tracking-[0.3em] text-blue-400">
+              04 / Tecnologias
+            </p>
+
+            <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+              Ferramentas da minha trajetória
+            </h2>
+
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
+              Tecnologias que fazem parte da minha trajetória de
+              desenvolvimento, separadas entre ferramentas utilizadas na
+              prática, tecnologias em aprendizado e áreas que explorei durante
+              meus estudos.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
+            {/* CORE STACK */}
+            <div className="border border-white/10 bg-white/[0.02]">
+              <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-blue-400">
+                    Core Stack
+                  </p>
+
+                  <p className="mt-1 font-mono text-xs text-zinc-600">
+                    tech.stack / in_use
+                  </p>
+                </div>
+
+                <span className="flex items-center gap-2 font-mono text-xs text-green-400">
+                  <span className="h-2 w-2 rounded-full bg-green-400" />
+                  IN USE
+                </span>
+              </div>
+
+              <div className="grid sm:grid-cols-2">
+                {/* PYTHON */}
+                <div className="border-b border-white/10 p-6 sm:border-r">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-mono text-xs text-zinc-600">01</p>
+                      <h3 className="mt-2 text-xl font-semibold">Python</h3>
+                    </div>
+
+                    <span className="font-mono text-xs text-blue-400">
+                      CORE
+                    </span>
+                  </div>
+
+                  <p className="mt-4 leading-7 text-zinc-400">
+                    Linguagem principal utilizada no desenvolvimento de
+                    automações, aplicações desktop e processamento de dados.
+                  </p>
+                </div>
+
+                {/* SELENIUM */}
+                <div className="border-b border-white/10 p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-mono text-xs text-zinc-600">02</p>
+                      <h3 className="mt-2 text-xl font-semibold">Selenium</h3>
+                    </div>
+
+                    <span className="font-mono text-xs text-blue-400">
+                      AUTOMATION
+                    </span>
+                  </div>
+
+                  <p className="mt-4 leading-7 text-zinc-400">
+                    Automação de sistemas web, interação com navegadores e
+                    construção de fluxos automatizados.
+                  </p>
+                </div>
+
+                {/* TKINTER */}
+                <div className="border-b border-white/10 p-6 sm:border-r">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-mono text-xs text-zinc-600">03</p>
+                      <h3 className="mt-2 text-xl font-semibold">Tkinter</h3>
+                    </div>
+
+                    <span className="font-mono text-xs text-zinc-500">
+                      DESKTOP
+                    </span>
+                  </div>
+
+                  <p className="mt-4 leading-7 text-zinc-400">
+                    Desenvolvimento de interfaces gráficas para aplicações
+                    desktop e ferramentas de automação.
+                  </p>
+                </div>
+
+                {/* PANDAS */}
+                <div className="border-b border-white/10 p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-mono text-xs text-zinc-600">04</p>
+                      <h3 className="mt-2 text-xl font-semibold">Pandas</h3>
+                    </div>
+
+                    <span className="font-mono text-xs text-zinc-500">
+                      DATA
+                    </span>
+                  </div>
+
+                  <p className="mt-4 leading-7 text-zinc-400">
+                    Manipulação de dados, geração de relatórios e processamento
+                    de informações estruturadas.
+                  </p>
+                </div>
+
+                {/* OPENPYXL */}
+                <div className="border-b border-white/10 p-6 sm:border-b-0 sm:border-r">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-mono text-xs text-zinc-600">05</p>
+                      <h3 className="mt-2 text-xl font-semibold">OpenPyXL</h3>
+                    </div>
+
+                    <span className="font-mono text-xs text-zinc-500">
+                      EXCEL
+                    </span>
+                  </div>
+
+                  <p className="mt-4 leading-7 text-zinc-400">
+                    Leitura, criação e manipulação de planilhas Excel dentro de
+                    soluções desenvolvidas em Python.
+                  </p>
+                </div>
+
+                {/* PYAUTOGUI */}
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-mono text-xs text-zinc-600">06</p>
+                      <h3 className="mt-2 text-xl font-semibold">PyAutoGUI</h3>
+                    </div>
+
+                    <span className="font-mono text-xs text-zinc-500">
+                      RPA
+                    </span>
+                  </div>
+
+                  <p className="mt-4 leading-7 text-zinc-400">
+                    Automação de interações com interfaces desktop e parte
+                    importante dos meus primeiros projetos de automação.
+                  </p>
+                </div>
+              </div>
+
+              {/* VERSIONAMENTO */}
+              <div className="border-t border-white/10 px-6 py-5">
+                <p className="mb-4 font-mono text-xs uppercase tracking-widest text-zinc-600">
+                  Version Control
+                </p>
+
+                <div className="flex flex-wrap gap-3">
+                  <span className="border border-white/10 bg-white/[0.02] px-4 py-2 font-mono text-sm text-zinc-300">
+                    Git
+                  </span>
+
+                  <span className="border border-white/10 bg-white/[0.02] px-4 py-2 font-mono text-sm text-zinc-300">
+                    GitHub
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* PAINEL LATERAL */}
+            <div className="space-y-6">
+              {/* LEARNING */}
+              <div className="border border-white/10 bg-white/[0.02]">
+                <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-[0.25em] text-blue-400">
+                      Learning
+                    </p>
+
+                    <p className="mt-1 font-mono text-xs text-zinc-600">
+                      current.process
+                    </p>
+                  </div>
+
+                  <span className="font-mono text-xs text-blue-400">
+                    ACTIVE
+                  </span>
+                </div>
+
+                <div className="space-y-3 p-5">
+                  {["Next.js", "React", "TypeScript", "Tailwind CSS"].map(
+                    (tech, index, array) => (
+                      <div
+                        key={tech}
+                        className={`flex items-center justify-between ${
+                          index !== array.length - 1
+                            ? "border-b border-white/10 pb-3"
+                            : ""
+                        }`}
+                      >
+                        <span className="text-zinc-300">{tech}</span>
+
+                        <span className="font-mono text-xs text-zinc-600">
+                          LEARNING
+                        </span>
+                      </div>
+                    ),
+                  )}
+                </div>
+
+                <div className="border-t border-white/10 px-5 py-4">
+                  <p className="font-mono text-xs leading-6 text-zinc-600">
+                    // tecnologias utilizadas atualmente na construção deste
+                    portfólio
+                  </p>
+                </div>
+              </div>
+
+              {/* EXPLORED */}
+              <div className="border border-white/10 bg-white/[0.02]">
+                <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
+                      Explored
+                    </p>
+
+                    <p className="mt-1 font-mono text-xs text-zinc-600">
+                      journey.history
+                    </p>
+                  </div>
+
+                  <span className="font-mono text-xs text-zinc-600">
+                    HISTORY
+                  </span>
+                </div>
+
+                <div className="flex flex-wrap gap-2 p-5">
+                  {[
+                    "Godot",
+                    "Backend",
+                    "Banco de Dados",
+                    "Data Science",
+                  ].map((item) => (
+                    <span
+                      key={item}
+                      className="border border-white/10 px-3 py-2 font-mono text-xs text-zinc-500"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="border-t border-white/10 px-5 py-4">
+                  <p className="text-sm leading-6 text-zinc-500">
+                    Áreas que fizeram parte da minha exploração inicial em
+                    desenvolvimento e ajudaram na descoberta do caminho que
+                    sigo atualmente.
+                  </p>
+                </div>
+              </div>
+
+              {/* LEARNING STATUS */}
+              <div className="border border-white/10 bg-white/[0.02] p-5 font-mono">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-zinc-600">
+                    learning.status
+                  </span>
+
+                  <span className="flex items-center gap-2 text-xs text-green-400">
+                    <span className="h-2 w-2 rounded-full bg-green-400" />
+                    RUNNING
+                  </span>
+                </div>
+
+                <p className="mt-5 text-sm leading-6 text-zinc-400">
+                  &gt; aprendizado contínuo através de projetos reais_
+                </p>
               </div>
             </div>
           </div>
