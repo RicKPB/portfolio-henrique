@@ -365,7 +365,6 @@ export default function Home() {
               ease: "easeOut",
             }}
             whileHover={{ y: -4 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
             className="overflow-hidden border border-white/10 bg-white/[0.02] transition-shadow duration-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
           >
             <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
