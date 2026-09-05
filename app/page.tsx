@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen text-white">
       <section className="flex min-h-screen items-center justify-center px-6">
         <div className="w-full max-w-6xl">
           <p className="mb-6 font-mono text-sm uppercase tracking-[0.3em] text-zinc-500">
