@@ -129,6 +129,7 @@ export default function Home() {
               <div className="mt-2 flex items-center gap-3 border-t border-white/10 pt-5 text-xs text-zinc-500">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-50"></span>
+
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
                 </span>
 
@@ -141,34 +142,90 @@ export default function Home() {
 
       <section
         id="home"
-        className="flex min-h-screen items-center justify-center px-6"
+        className="flex min-h-screen items-center justify-center px-6 pt-24"
       >
-        <div className="w-full max-w-6xl">
-          <p className="mb-6 font-mono text-sm uppercase tracking-[0.3em] text-zinc-500">
-            Portfolio / 2026
-          </p>
+        <div className="grid w-full max-w-6xl items-center gap-16 lg:grid-cols-[1.4fr_0.6fr]">
+          <div>
+            <p className="mb-6 font-mono text-sm uppercase tracking-[0.3em] text-zinc-500">
+              Portfolio / 2026
+            </p>
 
-          <h1 className="text-6xl font-bold tracking-tight sm:text-7xl md:text-8xl">
-            HENRIQUE<span className="text-zinc-500">_</span>
-          </h1>
+            <h1 className="text-6xl font-bold tracking-tight sm:text-7xl md:text-8xl">
+              HENRIQUE<span className="text-zinc-500">_</span>
+            </h1>
 
-          <div className="mt-8 space-y-2 font-mono text-lg text-zinc-400 md:text-xl">
-            <p>&gt; Software Developer</p>
-            <p>&gt; Automation Developer</p>
+            <div className="mt-8 space-y-2 font-mono text-lg text-zinc-400 md:text-xl">
+              <p>&gt; Software Developer</p>
+              <p>&gt; Automation Developer</p>
+            </div>
+
+            <p className="mt-10 max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl">
+              Desenvolvendo sistemas, automatizando processos e transformando
+              problemas reais em soluções através da tecnologia.
+            </p>
+
+            <div className="mt-12">
+              <a
+                href="#projetos"
+                className="inline-flex items-center border border-zinc-700 px-6 py-3 font-mono text-sm uppercase tracking-wider transition hover:border-white hover:bg-white hover:text-black"
+              >
+                Explorar projetos ↓
+              </a>
+            </div>
           </div>
 
-          <p className="mt-10 max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl">
-            Desenvolvendo sistemas, automatizando processos e transformando
-            problemas reais em soluções através da tecnologia.
-          </p>
+          <div className="hidden lg:block">
+            <div className="border border-white/10 bg-white/[0.02] font-mono text-sm backdrop-blur-sm">
+              <div className="flex items-center justify-between border-b border-white/10 px-5 py-3">
+                <span className="text-zinc-500">
+                  system.profile
+                </span>
 
-          <div className="mt-12">
-            <a
-              href="#projetos"
-              className="inline-flex items-center border border-zinc-700 px-6 py-3 font-mono text-sm uppercase tracking-wider transition hover:border-white hover:bg-white hover:text-black"
-            >
-              Explorar projetos ↓
-            </a>
+                <span className="text-xs text-zinc-600">
+                  v1.0
+                </span>
+              </div>
+
+              <div className="space-y-5 p-5">
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-zinc-600">
+                    Developer
+                  </p>
+
+                  <p className="mt-1 text-zinc-300">
+                    Henrique
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-zinc-600">
+                    Focus
+                  </p>
+
+                  <p className="mt-1 text-zinc-300">
+                    Systems & Automation
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-zinc-600">
+                    Environment
+                  </p>
+
+                  <p className="mt-1 text-zinc-300">
+                    Building real solutions
+                  </p>
+                </div>
+
+                <div className="border-t border-white/10 pt-5">
+                  <div className="flex items-center gap-3 text-xs text-zinc-500">
+                    <span className="h-2 w-2 rounded-full bg-blue-400"></span>
+
+                    WORKSPACE ACTIVE
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
