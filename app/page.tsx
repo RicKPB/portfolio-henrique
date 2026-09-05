@@ -1,10 +1,48 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const sectionIds = ["home", "projetos", "sobre", "tecnologias", "contato"];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleSection?.target?.id) {
+          setActiveSection(visibleSection.target.id);
+        }
+      },
+      {
+        rootMargin: "-30% 0px -55% 0px",
+        threshold: [0, 0.1, 0.25, 0.5, 0.75],
+      },
+    );
+
+    sectionIds.forEach((id) => {
+      const section = document.getElementById(id);
+
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const navLinkClass = (section: string) =>
+    `relative py-1 transition-colors duration-300 ${
+      activeSection === section
+        ? "text-white"
+        : "text-zinc-500 hover:text-zinc-200"
+    }`;
 
   return (
     <main className="min-h-screen text-white">
@@ -33,40 +71,29 @@ export default function Home() {
 
           {/* MENU DESKTOP */}
           <nav className="hidden items-center gap-8 font-mono text-xs md:flex">
-            <a
-              href="#home"
-              className="text-zinc-400 transition hover:text-white"
-            >
-              01. HOME
-            </a>
+            {[
+              ["home", "01. HOME"],
+              ["projetos", "02. PROJETOS"],
+              ["sobre", "03. SOBRE"],
+              ["tecnologias", "04. TECNOLOGIAS"],
+              ["contato", "05. CONTATO"],
+            ].map(([section, label]) => (
+              <a
+                key={section}
+                href={`#${section}`}
+                className={navLinkClass(section)}
+              >
+                {label}
 
-            <a
-              href="#projetos"
-              className="text-zinc-500 transition hover:text-white"
-            >
-              02. PROJETOS
-            </a>
-
-            <a
-              href="#sobre"
-              className="text-zinc-500 transition hover:text-white"
-            >
-              03. SOBRE
-            </a>
-
-            <a
-              href="#tecnologias"
-              className="text-zinc-500 transition hover:text-white"
-            >
-              04. TECNOLOGIAS
-            </a>
-
-            <a
-              href="#contato"
-              className="text-zinc-500 transition hover:text-white"
-            >
-              05. CONTATO
-            </a>
+                {activeSection === section && (
+                  <motion.span
+                    layoutId="active-nav"
+                    className="absolute -bottom-1 left-0 h-px w-full bg-blue-400"
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                  />
+                )}
+              </a>
+            ))}
           </nav>
 
           {/* STATUS */}
@@ -84,67 +111,58 @@ export default function Home() {
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
             className="flex h-9 w-9 items-center justify-center border border-white/10 font-mono text-lg text-zinc-300 transition hover:border-white/30 hover:text-white md:hidden"
-            aria-label="Abrir menu"
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
           >
             {menuOpen ? "×" : "≡"}
           </button>
         </div>
 
         {/* MENU MOBILE */}
-        {menuOpen && (
-          <div className="border-t border-white/10 bg-black/90 px-6 py-6 backdrop-blur-xl md:hidden">
-            <nav className="mx-auto flex max-w-6xl flex-col gap-5 font-mono text-sm">
-              <a
-                href="#home"
-                onClick={() => setMenuOpen(false)}
-                className="text-zinc-400 transition hover:text-white"
-              >
-                01. HOME
-              </a>
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              id="mobile-navigation" className="border-t border-white/10 bg-black/90 px-6 py-6 backdrop-blur-xl md:hidden"
+            >
+              <nav className="mx-auto flex max-w-6xl flex-col gap-5 font-mono text-sm">
+                {[
+                  ["home", "01. HOME"],
+                  ["projetos", "02. PROJETOS"],
+                  ["sobre", "03. SOBRE"],
+                  ["tecnologias", "04. TECNOLOGIAS"],
+                  ["contato", "05. CONTATO"],
+                ].map(([section, label]) => (
+                  <a
+                    key={section}
+                    href={`#${section}`}
+                    onClick={() => setMenuOpen(false)}
+                    className={`transition-colors ${
+                      activeSection === section
+                        ? "text-blue-400"
+                        : "text-zinc-500 hover:text-white"
+                    }`}
+                  >
+                    {label}
+                  </a>
+                ))}
 
-              <a
-                href="#projetos"
-                onClick={() => setMenuOpen(false)}
-                className="text-zinc-500 transition hover:text-white"
-              >
-                02. PROJETOS
-              </a>
+                <div className="mt-2 flex items-center gap-3 border-t border-white/10 pt-5 text-xs text-zinc-500">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-50" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+                  </span>
 
-              <a
-                href="#sobre"
-                onClick={() => setMenuOpen(false)}
-                className="text-zinc-500 transition hover:text-white"
-              >
-                03. SOBRE
-              </a>
-
-              <a
-                href="#tecnologias"
-                onClick={() => setMenuOpen(false)}
-                className="text-zinc-500 transition hover:text-white"
-              >
-                04. TECNOLOGIAS
-              </a>
-
-              <a
-                href="#contato"
-                onClick={() => setMenuOpen(false)}
-                className="text-zinc-500 transition hover:text-white"
-              >
-                05. CONTATO
-              </a>
-
-              <div className="mt-2 flex items-center gap-3 border-t border-white/10 pt-5 text-xs text-zinc-500">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-50" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
-                </span>
-
-                SYSTEM ONLINE
-              </div>
-            </nav>
-          </div>
-        )}
+                  SYSTEM ONLINE
+                </div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* =========================================================
@@ -346,7 +364,9 @@ export default function Home() {
               delay: 0.08,
               ease: "easeOut",
             }}
-            className="overflow-hidden border border-white/10 bg-white/[0.02]"
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="overflow-hidden border border-white/10 bg-white/[0.02] transition-shadow duration-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
           >
             <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
               {/* INFORMAÇÕES PRINCIPAIS */}
@@ -796,7 +816,7 @@ export default function Home() {
 
               <div className="grid sm:grid-cols-2">
                 {/* PYTHON */}
-                <div className="border-b border-white/10 p-6 sm:border-r">
+                <div className="border-b border-white/10 p-6 transition-colors duration-300 hover:bg-white/[0.035] sm:border-r">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="font-mono text-xs text-zinc-600">01</p>
@@ -815,7 +835,7 @@ export default function Home() {
                 </div>
 
                 {/* SELENIUM */}
-                <div className="border-b border-white/10 p-6">
+                <div className="border-b border-white/10 p-6 transition-colors duration-300 hover:bg-white/[0.035]">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="font-mono text-xs text-zinc-600">02</p>
@@ -834,7 +854,7 @@ export default function Home() {
                 </div>
 
                 {/* TKINTER */}
-                <div className="border-b border-white/10 p-6 sm:border-r">
+                <div className="border-b border-white/10 p-6 transition-colors duration-300 hover:bg-white/[0.035] sm:border-r">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="font-mono text-xs text-zinc-600">03</p>
@@ -853,7 +873,7 @@ export default function Home() {
                 </div>
 
                 {/* PANDAS */}
-                <div className="border-b border-white/10 p-6">
+                <div className="border-b border-white/10 p-6 transition-colors duration-300 hover:bg-white/[0.035]">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="font-mono text-xs text-zinc-600">04</p>
@@ -872,7 +892,7 @@ export default function Home() {
                 </div>
 
                 {/* OPENPYXL */}
-                <div className="border-b border-white/10 p-6 sm:border-b-0 sm:border-r">
+                <div className="border-b border-white/10 p-6 transition-colors duration-300 hover:bg-white/[0.035] sm:border-b-0 sm:border-r">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="font-mono text-xs text-zinc-600">05</p>
@@ -891,7 +911,7 @@ export default function Home() {
                 </div>
 
                 {/* PYAUTOGUI */}
-                <div className="p-6">
+                <div className="p-6 transition-colors duration-300 hover:bg-white/[0.035]">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="font-mono text-xs text-zinc-600">06</p>
@@ -937,7 +957,7 @@ export default function Home() {
               className="space-y-6"
             >
               {/* LEARNING */}
-              <div className="border border-white/10 bg-white/[0.02]">
+              <div className="border border-white/10 bg-white/[0.02] transition-colors duration-300 hover:border-white/20">
                 <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
                   <div>
                     <p className="font-mono text-xs uppercase tracking-[0.25em] text-blue-400">
@@ -984,7 +1004,7 @@ export default function Home() {
               </div>
 
               {/* EXPLORED */}
-              <div className="border border-white/10 bg-white/[0.02]">
+              <div className="border border-white/10 bg-white/[0.02] transition-colors duration-300 hover:border-white/20">
                 <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
                   <div>
                     <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
@@ -1085,6 +1105,8 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
+              whileHover={{ y: -4 }}
+              whileTap={{ scale: 0.99 }}
               href="mailto:papeschihenrique0@gmail.com"
               className="group border border-white/10 bg-white/[0.02] p-7 transition hover:border-blue-400/50 hover:bg-white/[0.04]"
             >
@@ -1121,6 +1143,8 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
+              whileHover={{ y: -4 }}
+              whileTap={{ scale: 0.99 }}
               href="https://github.com/RicKPB"
               target="_blank"
               rel="noreferrer"
