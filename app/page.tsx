@@ -229,6 +229,152 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section
+        id="projetos"
+        className="border-t border-white/10 px-6 py-28"
+      >
+        <div className="mx-auto w-full max-w-6xl">
+          <div className="mb-16">
+            <p className="font-mono text-sm uppercase tracking-[0.3em] text-blue-400">
+              02 / Projetos
+            </p>
+
+            <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+              Projetos em destaque
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
+              Soluções desenvolvidas para automatizar processos, reduzir tarefas
+              repetitivas e transformar necessidades reais em sistemas
+              funcionais.
+            </p>
+          </div>
+
+          <article className="overflow-hidden border border-white/10 bg-white/[0.02]">
+            <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="border-b border-white/10 p-8 lg:border-b-0 lg:border-r">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
+                    Case Study / 001
+                  </span>
+
+                  <span className="font-mono text-xs text-blue-400">
+                    ACTIVE
+                  </span>
+                </div>
+
+                <h3 className="mt-10 text-4xl font-bold tracking-tight">
+                  AUTO AGI
+                </h3>
+
+                <p className="mt-3 font-mono text-xs uppercase tracking-wider text-zinc-600">
+                  Projeto profissional · Quântico Digital
+                </p>
+
+                <p className="mt-5 leading-7 text-zinc-400">
+                  Aplicação desktop criada para automatizar processos de
+                  documentos, integrando leitura de arquivos, tratamento de
+                  dados e automação de tarefas em sistema web.
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-2">
+                  <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-400">
+                    Python
+                  </span>
+
+                  <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-400">
+                    Selenium
+                  </span>
+
+                  <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-400">
+                    Tkinter
+                  </span>
+
+                  <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-400">
+                    Pandas
+                  </span>
+
+                  <span className="border border-white/10 px-3 py-1 font-mono text-xs text-zinc-400">
+                    OpenPyXL
+                  </span>
+                </div>
+
+                <div className="mt-10">
+                  <a
+                    href="/projetos/auto-agi"
+                    className="inline-flex items-center border border-zinc-700 px-5 py-3 font-mono text-xs uppercase tracking-wider transition hover:border-blue-400 hover:bg-blue-400 hover:text-black"
+                  >
+                    Ver Case Study →
+                  </a>
+                </div>
+              </div>
+
+              <div className="p-8">
+                <div className="grid gap-8 sm:grid-cols-2">
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-widest text-zinc-600">
+                      Problema
+                    </p>
+
+                    <p className="mt-3 leading-7 text-zinc-400">
+                      Processos manuais e repetitivos envolvendo organização,
+                      validação e envio de documentos.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-widest text-zinc-600">
+                      Solução
+                    </p>
+
+                    <p className="mt-3 leading-7 text-zinc-400">
+                      Desenvolvimento de uma automação desktop capaz de executar
+                      o fluxo de documentos com maior padronização e controle.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-widest text-zinc-600">
+                      Interface
+                    </p>
+
+                    <p className="mt-3 leading-7 text-zinc-400">
+                      Aplicação com interface gráfica para iniciar, acompanhar e
+                      controlar a execução da automação.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-widest text-zinc-600">
+                      Objetivo
+                    </p>
+
+                    <p className="mt-3 leading-7 text-zinc-400">
+                      Reduzir trabalho manual, minimizar erros operacionais e
+                      tornar o processo mais eficiente.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-10 border-t border-white/10 pt-6">
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <span className="font-mono text-xs text-zinc-500">
+                      status:// stable_validated
+                    </span>
+
+                    <span className="flex items-center gap-2 font-mono text-xs text-green-400">
+                      <span className="h-2 w-2 rounded-full bg-green-400"></span>
+
+                      VERSION 2.1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
   );
 }
