@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -155,37 +156,111 @@ export default function Home() {
       >
         <div className="grid w-full max-w-6xl items-center gap-16 lg:grid-cols-[1.4fr_0.6fr]">
           {/* APRESENTAÇÃO */}
-          <div>
-            <p className="mb-6 font-mono text-sm uppercase tracking-[0.3em] text-zinc-500">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.14,
+                  delayChildren: 0.2,
+                },
+              },
+            }}
+          >
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 14 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.55, ease: "easeOut" },
+                },
+              }}
+              className="mb-6 font-mono text-sm uppercase tracking-[0.3em] text-zinc-500"
+            >
               Portfolio / 2026
-            </p>
+            </motion.p>
 
-            <h1 className="text-6xl font-bold tracking-tight sm:text-7xl md:text-8xl">
+            <motion.h1
+              variants={{
+                hidden: { opacity: 0, y: 18 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.65, ease: "easeOut" },
+                },
+              }}
+              className="text-6xl font-bold tracking-tight sm:text-7xl md:text-8xl"
+            >
               HENRIQUE<span className="text-zinc-500">_</span>
-            </h1>
+            </motion.h1>
 
-            <div className="mt-8 space-y-2 font-mono text-lg text-zinc-400 md:text-xl">
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 16 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.55, ease: "easeOut" },
+                },
+              }}
+              className="mt-8 space-y-2 font-mono text-lg text-zinc-400 md:text-xl"
+            >
               <p>&gt; Software Developer</p>
               <p>&gt; Automation Developer</p>
-            </div>
+            </motion.div>
 
-            <p className="mt-10 max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl">
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 16 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.55, ease: "easeOut" },
+                },
+              }}
+              className="mt-10 max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl"
+            >
               Desenvolvendo sistemas, automatizando processos e transformando
               problemas reais em soluções através da tecnologia.
-            </p>
+            </motion.p>
 
-            <div className="mt-12">
-              <a
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 16 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.55, ease: "easeOut" },
+                },
+              }}
+              className="mt-12"
+            >
+              <motion.a
                 href="#projetos"
-                className="inline-flex items-center border border-zinc-700 px-6 py-3 font-mono text-sm uppercase tracking-wider transition hover:border-white hover:bg-white hover:text-black"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2 }}
+                className="inline-flex items-center border border-zinc-700 px-6 py-3 font-mono text-sm uppercase tracking-wider transition-colors hover:border-white hover:bg-white hover:text-black"
               >
                 Explorar projetos ↓
-              </a>
-            </div>
-          </div>
+              </motion.a>
+            </motion.div>
+          </motion.div>
 
           {/* SYSTEM PROFILE */}
-          <div className="hidden lg:block">
+          <motion.div
+            initial={{ opacity: 0, x: 32 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.75,
+              delay: 0.75,
+              ease: "easeOut",
+            }}
+            className="hidden lg:block"
+          >
             <div className="border border-white/10 bg-white/[0.02] font-mono text-sm backdrop-blur-sm">
               <div className="flex items-center justify-between border-b border-white/10 px-5 py-3">
                 <span className="text-zinc-500">system.profile</span>
@@ -226,7 +301,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -239,7 +314,13 @@ export default function Home() {
       >
         <div className="mx-auto w-full max-w-6xl">
           {/* CABEÇALHO */}
-          <div className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mb-16"
+          >
             <p className="font-mono text-sm uppercase tracking-[0.3em] text-blue-400">
               02 / Projetos
             </p>
@@ -253,13 +334,33 @@ export default function Home() {
               repetitivas e transformar necessidades reais em sistemas
               funcionais.
             </p>
-          </div>
+          </motion.div>
 
           {/* AUTO AGI */}
-          <article className="overflow-hidden border border-white/10 bg-white/[0.02]">
+          <motion.article
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.18 }}
+            transition={{
+              duration: 0.7,
+              delay: 0.08,
+              ease: "easeOut",
+            }}
+            className="overflow-hidden border border-white/10 bg-white/[0.02]"
+          >
             <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
               {/* INFORMAÇÕES PRINCIPAIS */}
-              <div className="border-b border-white/10 p-8 lg:border-b-0 lg:border-r">
+              <motion.div
+                initial={{ opacity: 0, x: -18 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.18,
+                  ease: "easeOut",
+                }}
+                className="border-b border-white/10 p-8 lg:border-b-0 lg:border-r"
+              >
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
                     Case Study / 001
@@ -298,17 +399,30 @@ export default function Home() {
                 </div>
 
                 <div className="mt-10">
-                  <a
+                  <motion.a
                     href="/projetos/auto-agi"
-                    className="inline-flex items-center border border-zinc-700 px-5 py-3 font-mono text-xs uppercase tracking-wider transition hover:border-blue-400 hover:bg-blue-400 hover:text-black"
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.2 }}
+                    className="inline-flex items-center border border-zinc-700 px-5 py-3 font-mono text-xs uppercase tracking-wider transition-colors hover:border-blue-400 hover:bg-blue-400 hover:text-black"
                   >
                     Ver Case Study →
-                  </a>
+                  </motion.a>
                 </div>
-              </div>
+              </motion.div>
 
               {/* DETALHES */}
-              <div className="p-8">
+              <motion.div
+                initial={{ opacity: 0, x: 18 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.28,
+                  ease: "easeOut",
+                }}
+                className="p-8"
+              >
                 <div className="grid gap-8 sm:grid-cols-2">
                   <div>
                     <p className="font-mono text-xs uppercase tracking-widest text-zinc-600">
@@ -363,9 +477,9 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </article>
+          </motion.article>
         </div>
       </section>
 
@@ -379,7 +493,12 @@ export default function Home() {
         <div className="mx-auto w-full max-w-6xl">
           <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr]">
             {/* APRESENTAÇÃO */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.65, ease: "easeOut" }}
+            >
               <p className="font-mono text-sm uppercase tracking-[0.3em] text-blue-400">
                 03 / Sobre
               </p>
@@ -449,10 +568,15 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* TIMELINE */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+            >
               <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-4 font-mono text-xs">
                 <span className="text-zinc-500">journey.log</span>
                 <span className="text-zinc-600">2023 — PRESENT</span>
@@ -607,7 +731,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -621,7 +745,13 @@ export default function Home() {
       >
         <div className="mx-auto w-full max-w-6xl">
           {/* CABEÇALHO */}
-          <div className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mb-16"
+          >
             <p className="font-mono text-sm uppercase tracking-[0.3em] text-blue-400">
               04 / Tecnologias
             </p>
@@ -636,11 +766,17 @@ export default function Home() {
               prática, tecnologias em aprendizado e áreas que explorei durante
               meus estudos.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
             {/* CORE STACK */}
-            <div className="border border-white/10 bg-white/[0.02]">
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.12 }}
+              transition={{ duration: 0.7, delay: 0.05, ease: "easeOut" }}
+              className="border border-white/10 bg-white/[0.02]"
+            >
               <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
                 <div>
                   <p className="font-mono text-xs uppercase tracking-[0.25em] text-blue-400">
@@ -790,10 +926,16 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* PAINEL LATERAL */}
-            <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.12 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+              className="space-y-6"
+            >
               {/* LEARNING */}
               <div className="border border-white/10 bg-white/[0.02]">
                 <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
@@ -901,7 +1043,7 @@ export default function Home() {
                   &gt; aprendizado contínuo através de projetos reais_
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -915,7 +1057,13 @@ export default function Home() {
       >
         <div className="mx-auto w-full max-w-6xl">
           {/* CABEÇALHO */}
-          <div className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mb-16"
+          >
             <p className="font-mono text-sm uppercase tracking-[0.3em] text-blue-400">
               05 / Contato
             </p>
@@ -928,11 +1076,15 @@ export default function Home() {
               Estou aberto a oportunidades, projetos e conversas sobre
               desenvolvimento de software e automação.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
             {/* E-MAIL */}
-            <a
+            <motion.a
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
               href="mailto:papeschihenrique0@gmail.com"
               className="group border border-white/10 bg-white/[0.02] p-7 transition hover:border-blue-400/50 hover:bg-white/[0.04]"
             >
@@ -961,10 +1113,14 @@ export default function Home() {
                   →
                 </span>
               </div>
-            </a>
+            </motion.a>
 
             {/* GITHUB */}
-            <a
+            <motion.a
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
               href="https://github.com/RicKPB"
               target="_blank"
               rel="noreferrer"
@@ -995,11 +1151,17 @@ export default function Home() {
                   →
                 </span>
               </div>
-            </a>
+            </motion.a>
           </div>
 
           {/* STATUS */}
-          <div className="mt-6 border border-white/10 bg-white/[0.02]">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.55, delay: 0.18, ease: "easeOut" }}
+            className="mt-6 border border-white/10 bg-white/[0.02]"
+          >
             <div className="flex flex-col gap-5 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
               <div className="font-mono">
                 <p className="text-xs text-zinc-600">contact.status</p>
@@ -1018,10 +1180,16 @@ export default function Home() {
                 AVAILABLE FOR CONNECTION
               </span>
             </div>
-          </div>
+          </motion.div>
 
           {/* RODAPÉ */}
-          <div className="mt-20 flex flex-col gap-4 border-t border-white/10 pt-6 font-mono text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.22, ease: "easeOut" }}
+            className="mt-20 flex flex-col gap-4 border-t border-white/10 pt-6 font-mono text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between"
+          >
             <a
               href="#home"
               className="group flex items-center gap-2 transition hover:text-zinc-300"
@@ -1034,7 +1202,7 @@ export default function Home() {
             </a>
 
             <span>PORTFOLIO / 2026</span>
-          </div>
+          </motion.div>
         </div>
       </section>
 
