@@ -905,6 +905,139 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* =========================================================
+          05 / CONTATO
+      ========================================================= */}
+      <section
+        id="contato"
+        className="border-t border-white/10 px-6 py-28"
+      >
+        <div className="mx-auto w-full max-w-6xl">
+          {/* CABEÇALHO */}
+          <div className="mb-16">
+            <p className="font-mono text-sm uppercase tracking-[0.3em] text-blue-400">
+              05 / Contato
+            </p>
+
+            <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+              Vamos construir algo útil.
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
+              Estou aberto a oportunidades, projetos e conversas sobre
+              desenvolvimento de software e automação.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
+            {/* E-MAIL */}
+            <a
+              href="mailto:papeschihenrique0@gmail.com"
+              className="group border border-white/10 bg-white/[0.02] p-7 transition hover:border-blue-400/50 hover:bg-white/[0.04]"
+            >
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-600">
+                    Email
+                  </p>
+
+                  <p className="mt-5 break-all text-lg font-medium text-zinc-200 transition group-hover:text-white sm:text-xl">
+                    papeschihenrique0@gmail.com
+                  </p>
+                </div>
+
+                <span className="font-mono text-sm text-zinc-600 transition group-hover:text-blue-400">
+                  01
+                </span>
+              </div>
+
+              <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-5">
+                <span className="font-mono text-xs uppercase tracking-wider text-zinc-500">
+                  Enviar e-mail
+                </span>
+
+                <span className="font-mono text-lg text-zinc-500 transition group-hover:translate-x-1 group-hover:text-blue-400">
+                  →
+                </span>
+              </div>
+            </a>
+
+            {/* GITHUB */}
+            <a
+              href="https://github.com/RicKPB"
+              target="_blank"
+              rel="noreferrer"
+              className="group border border-white/10 bg-white/[0.02] p-7 transition hover:border-blue-400/50 hover:bg-white/[0.04]"
+            >
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-600">
+                    GitHub
+                  </p>
+
+                  <p className="mt-5 text-lg font-medium text-zinc-200 transition group-hover:text-white sm:text-xl">
+                    github.com/RicKPB
+                  </p>
+                </div>
+
+                <span className="font-mono text-sm text-zinc-600 transition group-hover:text-blue-400">
+                  02
+                </span>
+              </div>
+
+              <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-5">
+                <span className="font-mono text-xs uppercase tracking-wider text-zinc-500">
+                  Ver perfil
+                </span>
+
+                <span className="font-mono text-lg text-zinc-500 transition group-hover:translate-x-1 group-hover:text-blue-400">
+                  →
+                </span>
+              </div>
+            </a>
+          </div>
+
+          {/* STATUS */}
+          <div className="mt-6 border border-white/10 bg-white/[0.02]">
+            <div className="flex flex-col gap-5 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="font-mono">
+                <p className="text-xs text-zinc-600">contact.status</p>
+
+                <p className="mt-2 text-sm text-zinc-400">
+                  &gt; disponível para novas conexões e oportunidades_
+                </p>
+              </div>
+
+              <span className="flex items-center gap-2 font-mono text-xs text-green-400">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-50" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+                </span>
+
+                AVAILABLE FOR CONNECTION
+              </span>
+            </div>
+          </div>
+
+          {/* RODAPÉ */}
+          <div className="mt-20 flex flex-col gap-4 border-t border-white/10 pt-6 font-mono text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+            <a
+              href="#home"
+              className="group flex items-center gap-2 transition hover:text-zinc-300"
+            >
+              <span>&lt;</span>
+              <span>
+                H<span className="text-blue-400">.</span>DEV
+              </span>
+              <span>/&gt;</span>
+            </a>
+
+            <span>PORTFOLIO / 2026</span>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
